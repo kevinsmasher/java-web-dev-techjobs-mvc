@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <!-- TODO #1 - Use a loop to display job results in a table. -->
+<!--<div class="table.job-listing">-->
+<!--    <tr th:each="job : ${jobs}">-->
+<!--        <td th:text="${job.id}"></td>-->
+<!--&lt;!&ndash;        <td th:text="${job.employer}"></td>&ndash;&gt;-->
+
+        <table class="table.job-listing">
+<!--            <tr>-->
+<!--                <th>ID:</th>-->
+<!--                <th>Name:</th>-->
+<!--                <th>Employer:</th>-->
+<!--                <th>Location:</th>-->
+<!--                <th>Position Type:</th>-->
+<!--                <th>Skill:</th>-->
+<!--            </tr>-->
+<!--            <tr th:each="job : ${jobs}">-->
+            <tr th:each="job : ${jobs}">
+
+                <td><b>
+                    <div th:text="${'ID: ' + '${job.id}'}"></div>
+                    <div th:text="${job.name}"></div>
+                    <div th:text="${job.employer}"></div>
+                    <div th:text="${job.location}"></div>
+                    <div th:text="${job.positionType}"></div>
+                    <div th:text="${job.coreCompetency}"></div>
+                </b>
+                </td>
+
+<!--                <p>ID: <p th:text="${job.id}"></p>-->
+<!--                    <th th:text="${job.id}"></th>-->
+<!--                    <th th:text="${job.name}"></th>-->
+<!--&lt;!&ndash;                <p>Name: <p th:text="${job.name}"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <th><br />Name: </th><td th:text="${job.name}"></td>&ndash;&gt;-->
+<!--                    <th th:text="${job.employer}"></th>-->
+<!--                    <th th:text="${job.location}"></th>-->
+<!--                    <th th:text="${job.positionType}"></th>-->
+<!--                    <th th:text="${job.coreCompetency}"></th>-->
+
+
+    </tr>
+</table>
+
+</div>
+
+</body>
+</html>
